@@ -1,17 +1,69 @@
 ---
+import Image from "astro/components/Image.astro";
+
 import MainLayout from "@/layouts/MainLayout.astro";
+import logo from "@/assets/logo.svg";
 ---
 
 <MainLayout title="Frontend Mentor | Tip Calculator">
   <main class="flex h-screen flex-col items-center justify-center px-10">
-    <h1
-      class="text-theme-very-dark-cyan/75 mb-18 text-2xl tracking-[.4em] uppercase"
-    >
-      <span>Spli</span><span class="block">tter</span>
-    </h1>
+    <Image src={logo} alt="Splitter" class="mb-18" loading="eager" />
     <div
       class="bg-theme-white h-[480px] w-full max-w-[920px] rounded-3xl shadow-xl"
     >
+      <form action="" class="flex h-full w-1/2 flex-col justify-between p-12">
+        <div class="mb-4 flex flex-col">
+          <label for="bill" class="text-theme-dark-grayish-cyan mb-2 text-lg"
+            >Bill</label
+          >
+          <input
+            type="text"
+            name="bill"
+            class="bg-theme-very-light-grayish-cyan px-4 py-2 text-right text-2xl"
+            placeholder="0"
+          />
+        </div>
+        <div class="mb-4 flex flex-col">
+          <p class="text-theme-dark-grayish-cyan mb-2 text-lg">Select Tip %</p>
+          <div class="grid grid-cols-3 gap-2">
+            <span
+              class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center"
+              >5%</span
+            >
+            <span
+              class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center"
+              >10%</span
+            >
+            <span
+              class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center"
+              >15%</span
+            >
+            <span
+              class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center"
+              >25%</span
+            >
+            <span
+              class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center"
+              >50%</span
+            >
+            <span
+              class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center"
+              >Custom</span
+            >
+          </div>
+        </div>
+        <div class="mb-4 flex flex-col">
+          <label for="people" class="text-theme-dark-grayish-cyan mb-2 text-lg"
+            >Number of People</label
+          >
+          <input
+            type="text"
+            name="people"
+            class="bg-theme-very-light-grayish-cyan px-4 py-2 text-right text-2xl"
+            placeholder="0"
+          />
+        </div>
+      </form>
     </div>
   </main>
 </MainLayout>
