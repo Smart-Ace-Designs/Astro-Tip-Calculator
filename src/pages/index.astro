@@ -3,6 +3,8 @@ import Image from "astro/components/Image.astro";
 
 import MainLayout from "@/layouts/MainLayout.astro";
 import logo from "@/assets/logo.svg";
+import dollar from "@/assets/icon-dollar.svg";
+import person from "@/assets/icon-person.svg";
 ---
 
 <MainLayout title="Frontend Mentor | Tip Calculator">
@@ -12,16 +14,17 @@ import logo from "@/assets/logo.svg";
       class="bg-theme-white h-[480px] w-full max-w-[920px] rounded-3xl shadow-xl"
     >
       <form action="" class="flex h-full w-1/2 flex-col justify-between p-12">
-        <div class="mb-4 flex flex-col">
+        <div class="relative mb-4 flex flex-col">
           <label for="bill" class="text-theme-dark-grayish-cyan mb-2 text-lg"
             >Bill</label
           >
           <input
             type="text"
             name="bill"
-            class="bg-theme-very-light-grayish-cyan px-4 py-2 text-right text-2xl"
+            class="bg-theme-very-light-grayish-cyan py-2 pr-4 pl-10 text-right text-2xl"
             placeholder="0"
           />
+          <Image src={dollar} alt="dollar" class="absolute top-13 left-4" />
         </div>
         <div class="mb-4 flex flex-col">
           <p class="text-theme-dark-grayish-cyan mb-2 text-lg">Select Tip %</p>
@@ -52,16 +55,17 @@ import logo from "@/assets/logo.svg";
             >
           </div>
         </div>
-        <div class="mb-4 flex flex-col">
+        <div class="relative mb-4 flex flex-col">
           <label for="people" class="text-theme-dark-grayish-cyan mb-2 text-lg"
             >Number of People</label
           >
           <input
             type="text"
             name="people"
-            class="bg-theme-very-light-grayish-cyan px-4 py-2 text-right text-2xl"
+            class="bg-theme-very-light-grayish-cyan py-2 pr-4 pl-10 text-right text-2xl"
             placeholder="0"
           />
+          <Image src={person} alt="person" class="absolute top-13 left-4" />
         </div>
       </form>
     </div>
