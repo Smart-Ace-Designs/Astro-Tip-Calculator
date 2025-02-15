@@ -1,0 +1,62 @@
+---
+import Image from "astro/components/Image.astro";
+
+import dollar from "@/assets/icon-dollar.svg";
+import person from "@/assets/icon-person.svg";
+---
+
+<form action="" class="flex h-full w-1/2 flex-col justify-between p-12">
+  <div class="relative mb-4 flex flex-col">
+    <label for="bill" class="text-theme-dark-grayish-cyan mb-2 text-lg"
+      >Bill</label
+    >
+    <input
+      type="text"
+      name="bill"
+      class="bg-theme-very-light-grayish-cyan placeholder:text-theme-dark-grayish-cyan/50 py-2 pr-4 pl-10 text-right text-2xl"
+      placeholder="0"
+    />
+    <Image src={dollar} alt="dollar" class="absolute top-13 left-4" />
+  </div>
+  <div class="mb-4 flex flex-col">
+    <p class="text-theme-dark-grayish-cyan mb-2 text-lg">Select Tip %</p>
+    <div class="grid grid-cols-3 gap-2">
+      <span
+        class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center"
+        >5%</span
+      >
+      <span
+        class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center"
+        >10%</span
+      >
+      <span
+        class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center"
+        >15%</span
+      >
+      <span
+        class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center"
+        >25%</span
+      >
+      <span
+        class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center"
+        >50%</span
+      >
+      <span
+        class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center"
+        >Custom</span
+      >
+    </div>
+  </div>
+  <div class="relative mb-4 flex flex-col">
+    <label for="people" class="text-theme-dark-grayish-cyan mb-2 text-lg"
+      >Number of People</label
+    >
+    <input
+      type="text"
+      name="people"
+      class="bg-theme-very-light-grayish-cyan placeholder:text-theme-dark-grayish-cyan/50 py-2 pr-4 pl-10 text-right text-2xl"
+      placeholder="0"
+    />
+    <Image src={person} alt="person" class="absolute top-13 left-4" />
+  </div>
+</form>
