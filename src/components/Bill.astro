@@ -6,10 +6,8 @@ import person from "@/assets/icon-person.svg";
 ---
 
 <form action="" class="flex h-full w-1/2 flex-col justify-between p-12">
-  <div class="relative mb-4 flex flex-col">
-    <label for="bill" class="text-theme-dark-grayish-cyan mb-2 text-lg"
-      >Bill</label
-    >
+  <div class="relative mb-6 flex flex-col">
+    <label for="bill" class="text-theme-dark-grayish-cyan mb-2">Bill</label>
     <input
       type="text"
       name="bill"
@@ -23,32 +21,44 @@ import person from "@/assets/icon-person.svg";
       class="absolute top-13 left-4"
     />
   </div>
-  <div class="mb-4 flex flex-col">
-    <p class="text-theme-dark-grayish-cyan mb-2 text-lg">Select Tip %</p>
-    <div class="grid grid-cols-3 gap-2">
-      <span
-        class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center"
-        >5%</span
+  <div class="mb-6 flex flex-col">
+    <p class="text-theme-dark-grayish-cyan mb-4">Select Tip %</p>
+    <div class="grid grid-cols-3 gap-4" id="tip-selector">
+      <input type="radio" id="t-5" name="tip" value="5" class="hidden" />
+      <label
+        for="t-5"
+        class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center text-2xl hover:cursor-pointer"
+        >5%</label
       >
-      <span
-        class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center"
-        >10%</span
+      <input type="radio" id="t-10" name="tip" value="10" class="hidden" />
+      <label
+        for="t-10"
+        class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center text-2xl hover:cursor-pointer"
+        >10%</label
       >
-      <span
-        class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center"
-        >15%</span
+      <input type="radio" id="t-15" name="tip" value="15" class="hidden" />
+      <label
+        for="t-15"
+        class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center text-2xl hover:cursor-pointer"
+        >15%</label
       >
-      <span
-        class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center"
-        >25%</span
+      <input type="radio" id="t-25" name="tip" value="25" class="hidden" />
+      <label
+        for="t-25"
+        class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center text-2xl hover:cursor-pointer"
+        >25%</label
       >
-      <span
-        class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center"
-        >50%</span
+      <input type="radio" id="t-50" name="tip" value="50" class="hidden" />
+      <label
+        for="t-50"
+        class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center text-2xl hover:cursor-pointer"
+        >50%</label
       >
-      <span
-        class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center"
-        >Custom</span
+      <input type="radio" id="t-custom" name="tip" value="0" class="hidden" />
+      <label
+        for="t-custom"
+        class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center text-2xl hover:cursor-pointer"
+        >Custom</label
       >
     </div>
   </div>
@@ -70,3 +80,27 @@ import person from "@/assets/icon-person.svg";
     />
   </div>
 </form>
+
+<script>
+  document.querySelectorAll('input[type="radio"]').forEach((radio: Element) => {
+    radio.addEventListener("change", function (this: HTMLInputElement) {
+      document
+        .querySelectorAll("#tip-selector label")
+        .forEach((label: Element) => {
+          label.classList.remove(
+            "bg-theme-strong-cyan/40",
+            "text-theme-very-dark-cyan",
+          );
+          label.classList.add("bg-theme-very-dark-cyan", "text-theme-white");
+        });
+      (this.nextElementSibling as HTMLElement).classList.add(
+        "bg-theme-strong-cyan/40",
+        "text-theme-very-dark-cyan",
+      );
+      (this.nextElementSibling as HTMLElement).classList.remove(
+        "bg-theme-very-dark-cyan",
+        "text-theme-white",
+      );
+    });
+  });
+</script>
