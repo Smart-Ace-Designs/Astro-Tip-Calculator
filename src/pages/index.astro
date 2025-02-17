@@ -19,7 +19,20 @@ import logo from "@/assets/logo.svg";
       class="bg-theme-white flex h-[480px] w-full max-w-[920px] flex-row rounded-3xl shadow-xl"
     >
       <Bill />
-      <div class="bg-theme-very-dark-cyan my-10 mr-10 w-1/2 rounded-2xl"></div>
+      <div
+        class="bg-theme-very-dark-cyan my-8 mr-10 w-1/2 rounded-2xl px-8 pt-14 pb-8"
+      >
+        <div class="mb-10 grid w-full grid-cols-2">
+          <h2 class="text-theme-white">Tip Amount</h2>
+          <p class="text-theme-strong-cyan text-right text-5xl">$0.00</p>
+          <p class="text-theme-grayish-cyan text-sm">/ person</p>
+        </div>
+        <div class="grid grid-cols-2">
+          <h2 class="text-theme-white">Total</h2>
+          <p class="text-theme-strong-cyan text-right text-5xl">$0.00</p>
+          <p class="text-theme-grayish-cyan text-sm">/ person</p>
+        </div>
+      </div>
     </div>
   </main>
 </MainLayout>
