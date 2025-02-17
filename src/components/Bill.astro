@@ -18,7 +18,7 @@ import person from "@/assets/icon-person.svg";
       src={dollar}
       alt="Dolar sign"
       loading="eager"
-      class="absolute top-13 left-4"
+      class="absolute top-12 left-4"
     />
   </div>
   <div class="mb-6 flex flex-col">
@@ -54,12 +54,12 @@ import person from "@/assets/icon-person.svg";
         class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center text-2xl hover:cursor-pointer"
         >50%</label
       >
-      <input type="radio" id="t-custom" name="tip" value="0" class="hidden" />
-      <label
-        for="t-custom"
-        class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center text-2xl hover:cursor-pointer"
-        >Custom</label
-      >
+      <input
+        type="text"
+        placeholder="Custom"
+        id="custom"
+        class="bg-theme-very-dark-cyan text-theme-white placeholder:text-theme-white focus:bg-theme-very-light-grayish-cyan focus:text-theme-very-dark-cyan rounded p-2 text-center text-2xl hover:cursor-pointer focus:text-right focus:placeholder:opacity-0"
+      />
     </div>
   </div>
   <div class="relative mb-4 flex flex-col">
@@ -76,23 +76,27 @@ import person from "@/assets/icon-person.svg";
       src={person}
       alt="Dinner party members"
       loading="eager"
-      class="absolute top-13 left-4"
+      class="absolute top-12 left-4"
     />
   </div>
 </form>
 
 <script>
+  const resetRadioButtons = () => {
+    document
+      .querySelectorAll("#tip-selector label")
+      .forEach((label: Element) => {
+        label.classList.remove(
+          "bg-theme-strong-cyan/40",
+          "text-theme-very-dark-cyan",
+        );
+        label.classList.add("bg-theme-very-dark-cyan", "text-theme-white");
+      });
+  };
+
   document.querySelectorAll('input[type="radio"]').forEach((radio: Element) => {
     radio.addEventListener("change", function (this: HTMLInputElement) {
-      document
-        .querySelectorAll("#tip-selector label")
-        .forEach((label: Element) => {
-          label.classList.remove(
-            "bg-theme-strong-cyan/40",
-            "text-theme-very-dark-cyan",
-          );
-          label.classList.add("bg-theme-very-dark-cyan", "text-theme-white");
-        });
+      resetRadioButtons();
       (this.nextElementSibling as HTMLElement).classList.add(
         "bg-theme-strong-cyan/40",
         "text-theme-very-dark-cyan",
@@ -102,5 +106,9 @@ import person from "@/assets/icon-person.svg";
         "text-theme-white",
       );
     });
+  });
+
+  document.getElementById("custom")?.addEventListener("focus", () => {
+    resetRadioButtons();
   });
 </script>
