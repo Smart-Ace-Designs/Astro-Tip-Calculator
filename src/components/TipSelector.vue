@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { computed, ref, useTemplateRef } from "vue";
 
-const standardTip = ref<number>(0);
+import StandardTip from "./StandardTip.vue";
+
+const standardTip = ref<string>("");
 const customTip = ref<string>("");
 
 const clearCustomTip = () => {
@@ -9,7 +11,9 @@ const clearCustomTip = () => {
 };
 
 const tip = computed(() => {
-  return customTip.value !== "" ? parseInt(customTip.value) : standardTip.value;
+  return customTip.value !== ""
+    ? parseInt(customTip.value)
+    : parseInt(standardTip.value);
 });
 </script>
 
@@ -17,71 +21,35 @@ const tip = computed(() => {
   <div class="mb-6 flex flex-col">
     <p class="text-theme-dark-grayish-cyan mb-4">Select Tip %</p>
     <div class="grid grid-cols-3 gap-4" id="tip-selector">
-      <input
-        @click="clearCustomTip"
-        type="radio"
-        id="t-5"
-        name="tip"
-        value="5"
-        class="hidden"
+      <StandardTip
+        tipValue="5"
         v-model="standardTip"
-      />
-      <label
-        for="t-5"
-        class="bg-theme-very-dark-cyan text-theme-white hover:bg-theme-strong-cyan hover:text-theme-very-dark-cyan rounded p-2 text-center text-2xl hover:cursor-pointer"
-        >5%</label
+        @clear-custom-tip="clearCustomTip"
+        >5%</StandardTip
       >
-      <input
-        type="radio"
-        id="t-10"
-        name="tip"
-        value="10"
-        class="hidden"
+      <StandardTip
+        tipValue="10"
         v-model="standardTip"
-      />
-      <label
-        for="t-10"
-        class="bg-theme-very-dark-cyan text-theme-white hover:bg-theme-strong-cyan hover:text-theme-very-dark-cyan rounded p-2 text-center text-2xl hover:cursor-pointer"
-        >10%</label
+        @clear-custom-tip="clearCustomTip"
+        >10%</StandardTip
       >
-      <input
-        type="radio"
-        id="t-15"
-        name="tip"
-        value="15"
-        class="hidden"
+      <StandardTip
+        tipValue="15"
         v-model="standardTip"
-      />
-      <label
-        for="t-15"
-        class="bg-theme-very-dark-cyan text-theme-white hover:bg-theme-strong-cyan hover:text-theme-very-dark-cyan rounded p-2 text-center text-2xl hover:cursor-pointer"
-        >15%</label
+        @clear-custom-tip="clearCustomTip"
+        >15%</StandardTip
       >
-      <input
-        type="radio"
-        id="t-25"
-        name="tip"
-        value="25"
-        class="hidden"
+      <StandardTip
+        tipValue="25"
         v-model="standardTip"
-      />
-      <label
-        for="t-25"
-        class="bg-theme-very-dark-cyan text-theme-white hover:bg-theme-strong-cyan hover:text-theme-very-dark-cyan rounded p-2 text-center text-2xl hover:cursor-pointer"
-        >25%</label
+        @clear-custom-tip="clearCustomTip"
+        >25%</StandardTip
       >
-      <input
-        type="radio"
-        id="t-50"
-        name="tip"
-        value="50"
-        class="hidden"
+      <StandardTip
+        tipValue="50"
         v-model="standardTip"
-      />
-      <label
-        for="t-50"
-        class="bg-theme-very-dark-cyan text-theme-white hover:bg-theme-strong-cyan hover:text-theme-very-dark-cyan rounded p-2 text-center text-2xl hover:cursor-pointer"
-        >50%</label
+        @clear-custom-tip="clearCustomTip"
+        >50%</StandardTip
       >
       <input
         type="text"
