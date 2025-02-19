@@ -28,7 +28,7 @@ const tip = computed(() => {
       />
       <label
         for="t-5"
-        class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center text-2xl hover:cursor-pointer"
+        class="bg-theme-very-dark-cyan text-theme-white hover:bg-theme-strong-cyan hover:text-theme-very-dark-cyan rounded p-2 text-center text-2xl hover:cursor-pointer"
         >5%</label
       >
       <input
@@ -41,7 +41,7 @@ const tip = computed(() => {
       />
       <label
         for="t-10"
-        class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center text-2xl hover:cursor-pointer"
+        class="bg-theme-very-dark-cyan text-theme-white hover:bg-theme-strong-cyan hover:text-theme-very-dark-cyan rounded p-2 text-center text-2xl hover:cursor-pointer"
         >10%</label
       >
       <input
@@ -54,7 +54,7 @@ const tip = computed(() => {
       />
       <label
         for="t-15"
-        class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center text-2xl hover:cursor-pointer"
+        class="bg-theme-very-dark-cyan text-theme-white hover:bg-theme-strong-cyan hover:text-theme-very-dark-cyan rounded p-2 text-center text-2xl hover:cursor-pointer"
         >15%</label
       >
       <input
@@ -67,7 +67,7 @@ const tip = computed(() => {
       />
       <label
         for="t-25"
-        class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center text-2xl hover:cursor-pointer"
+        class="bg-theme-very-dark-cyan text-theme-white hover:bg-theme-strong-cyan hover:text-theme-very-dark-cyan rounded p-2 text-center text-2xl hover:cursor-pointer"
         >25%</label
       >
       <input
@@ -80,14 +80,14 @@ const tip = computed(() => {
       />
       <label
         for="t-50"
-        class="bg-theme-very-dark-cyan text-theme-white rounded p-2 text-center text-2xl hover:cursor-pointer"
+        class="bg-theme-very-dark-cyan text-theme-white hover:bg-theme-strong-cyan hover:text-theme-very-dark-cyan rounded p-2 text-center text-2xl hover:cursor-pointer"
         >50%</label
       >
       <input
         type="text"
         placeholder="Custom"
         id="custom"
-        class="bg-theme-very-light-grayish-cyan text-theme-very-dark-cyan placeholder:text-theme-dark-grayish-cyan focus:bg-theme-very-light-grayish-cyan rounded p-2 text-center text-2xl hover:cursor-pointer focus:text-right focus:placeholder:opacity-0"
+        class="bg-theme-very-light-grayish-cyan text-theme-very-dark-cyan placeholder:text-theme-dark-grayish-cyan focus:bg-theme-very-light-grayish-cyan focus:outline-theme-strong-cyan caret-theme-strong-cyan rounded p-2 text-center text-2xl hover:cursor-pointer focus:text-right focus:placeholder:opacity-0"
         v-model="customTip"
       />
     </div>
