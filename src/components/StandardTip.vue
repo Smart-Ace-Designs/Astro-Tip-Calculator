@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-  tipValue: string;
+  tip: string;
   modelValue: string;
 }>();
 
@@ -15,14 +15,14 @@ const updateValue = (event: Event) => {
   <input
     @change="updateValue"
     type="radio"
-    :id="`t-${tipValue}`"
+    :id="`t-${tip}`"
     name="tip"
-    :value="tipValue"
+    :value="tip"
     class="hidden"
   />
   <label
-    :for="`t-${tipValue}`"
+    :for="`t-${tip}`"
     class="bg-theme-very-dark-cyan text-theme-white hover:bg-theme-strong-cyan hover:text-theme-very-dark-cyan rounded p-2 text-center text-2xl hover:cursor-pointer"
-    ><slot
-  /></label>
+    >{{ tip }}%</label
+  >
 </template>

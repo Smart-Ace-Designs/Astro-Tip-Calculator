@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, useTemplateRef } from "vue";
+import { computed, ref } from "vue";
 
 import StandardTip from "./StandardTip.vue";
 
@@ -22,35 +22,30 @@ const tip = computed(() => {
     <p class="text-theme-dark-grayish-cyan mb-4">Select Tip %</p>
     <div class="grid grid-cols-3 gap-4" id="tip-selector">
       <StandardTip
-        tipValue="5"
+        tip="5"
         v-model="standardTip"
         @clear-custom-tip="clearCustomTip"
-        >5%</StandardTip
-      >
+      />
       <StandardTip
-        tipValue="10"
+        tip="10"
         v-model="standardTip"
         @clear-custom-tip="clearCustomTip"
-        >10%</StandardTip
-      >
+      />
       <StandardTip
-        tipValue="15"
+        tip="15"
         v-model="standardTip"
         @clear-custom-tip="clearCustomTip"
-        >15%</StandardTip
-      >
+      />
       <StandardTip
-        tipValue="25"
+        tip="25"
         v-model="standardTip"
         @clear-custom-tip="clearCustomTip"
-        >25%</StandardTip
-      >
+      />
       <StandardTip
-        tipValue="50"
+        tip="50"
         v-model="standardTip"
         @clear-custom-tip="clearCustomTip"
-        >50%</StandardTip
-      >
+      />
       <input
         type="text"
         placeholder="Custom"
