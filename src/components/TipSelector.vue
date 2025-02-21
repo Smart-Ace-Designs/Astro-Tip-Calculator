@@ -6,10 +6,15 @@ import CustomTip from "./CustomTip.vue";
 
 const standardTip = ref<string>("15");
 const customTip = ref<string>("");
+const activeTip = ref<string>("15");
 const standardTipsTypes = ["5", "10", "15", "25", "50"];
 
 const clearCustomTip = () => {
   customTip.value = "";
+};
+
+const updateActiveTip = (tip: string) => {
+  activeTip.value = tip;
 };
 
 const tip = computed(() => {
@@ -27,8 +32,10 @@ const tip = computed(() => {
         v-for="type in standardTipsTypes"
         :key="type"
         :tip="type"
+        :is-active="activeTip === type"
         v-model="standardTip"
         @clear-custom-tip="clearCustomTip"
+        @update-active-tip="updateActiveTip"
       />
       <CustomTip v-model="customTip" />
     </div>

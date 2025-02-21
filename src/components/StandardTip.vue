@@ -2,16 +2,15 @@
 import { ref } from "vue";
 
 const model = defineModel<string>();
-const emit = defineEmits(["clear-custom-tip"]);
-defineProps<{
+const emit = defineEmits(["clear-custom-tip", "update-active-tip"]);
+const props = defineProps<{
   tip: string;
+  isActive: boolean;
 }>();
-
-const isActive = ref<boolean>(false);
 
 const handleClick = () => {
   emit("clear-custom-tip");
-  isActive.value = true;
+  emit("update-active-tip", props.tip);
 };
 </script>
 
