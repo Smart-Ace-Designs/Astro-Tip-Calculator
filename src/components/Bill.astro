@@ -46,7 +46,7 @@ import person from "@/assets/icon-person.svg";
   </div>
 </form>
 
-<!-- <script>
+<script>
   const resetRadioButtons = () => {
     document
       .querySelectorAll("#tip-selector label")
@@ -59,21 +59,7 @@ import person from "@/assets/icon-person.svg";
       });
   };
 
-  document.querySelectorAll('input[type="radio"]').forEach((radio: Element) => {
-    radio.addEventListener("change", function (this: HTMLInputElement) {
-      resetRadioButtons();
-      (this.nextElementSibling as HTMLElement).classList.add(
-        "bg-theme-strong-cyan/40",
-        "text-theme-very-dark-cyan",
-      );
-      (this.nextElementSibling as HTMLElement).classList.remove(
-        "bg-theme-very-dark-cyan",
-        "text-theme-white",
-      );
-    });
-  });
-
   document.getElementById("custom")?.addEventListener("focus", () => {
     resetRadioButtons();
   });
-</script> -->
+</script>

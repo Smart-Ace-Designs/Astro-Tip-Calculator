@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { ref } from "vue";
-
-const model = defineModel<string>();
 const emit = defineEmits(["clear-custom-tip", "update-active-tip"]);
+const model = defineModel<string>();
 const props = defineProps<{
   tip: string;
   isActive: boolean;
