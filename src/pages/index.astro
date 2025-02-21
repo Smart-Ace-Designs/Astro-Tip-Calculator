@@ -1,7 +1,7 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
 
-import Bill from "@/components/Bill.astro";
+import Bill from "@/components/Bill.vue";
 
 import Image from "astro/components/Image.astro";
 import logo from "@/assets/logo.svg";
@@ -19,7 +19,7 @@ import logo from "@/assets/logo.svg";
       class="bg-theme-white flex h-[480px] w-full max-w-[920px] flex-row rounded-3xl shadow-xl"
     >
       <div class="w-1/2">
-        <Bill />
+        <Bill client:load />
       </div>
       <div
         class="bg-theme-very-dark-cyan my-8 mr-10 flex w-1/2 flex-col space-y-10 rounded-2xl px-10 pt-12 pb-8"

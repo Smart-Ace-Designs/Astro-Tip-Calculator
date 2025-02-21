@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
 
 import StandardTip from "./StandardTip.vue";
 import CustomTip from "./CustomTip.vue";
+
+const emit = defineEmits(["update-tip"]);
 
 const standardTip = ref<string>("15");
 const customTip = ref<string>("");
@@ -21,6 +23,10 @@ const tip = computed(() => {
   return customTip.value !== ""
     ? parseInt(customTip.value)
     : parseInt(standardTip.value);
+});
+
+watch(tip, (newVal) => {
+  emit("update-tip", newVal);
 });
 </script>
 
