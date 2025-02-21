@@ -45,21 +45,3 @@ import person from "@/assets/icon-person.svg";
     />
   </div>
 </form>
-
-<script>
-  const resetRadioButtons = () => {
-    document
-      .querySelectorAll("#tip-selector label")
-      .forEach((label: Element) => {
-        label.classList.remove(
-          "bg-theme-strong-cyan/40",
-          "text-theme-very-dark-cyan",
-        );
-        label.classList.add("bg-theme-very-dark-cyan", "text-theme-white");
-      });
-  };
-
-  document.getElementById("custom")?.addEventListener("focus", () => {
-    resetRadioButtons();
-  });
-</script>

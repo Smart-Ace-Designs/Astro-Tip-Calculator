@@ -1,10 +1,12 @@
 <script setup lang="ts">
 const modelValue = defineModel<string>();
+const emit = defineEmits(["update-active-tip"]);
 </script>
 
 <template>
   <input
     v-model="modelValue"
+    @focus="$emit('update-active-tip')"
     type="text"
     placeholder="Custom"
     id="custom"

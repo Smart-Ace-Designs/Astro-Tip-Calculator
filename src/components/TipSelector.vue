@@ -37,7 +37,7 @@ const tip = computed(() => {
         @clear-custom-tip="clearCustomTip"
         @update-active-tip="updateActiveTip"
       />
-      <CustomTip v-model="customTip" />
+      <CustomTip v-model="customTip" @updateActiveTip="activeTip = ''" />
     </div>
   </div>
 </template>
