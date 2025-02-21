@@ -1,19 +1,15 @@
 <script setup lang="ts">
+const modelValue = defineModel<string>();
+defineEmits(["clear-custom-tip"]);
 defineProps<{
   tip: string;
-  modelValue: string;
 }>();
-
-const emit = defineEmits(["update:model-value", "clear-custom-tip"]);
-const updateValue = (event: Event) => {
-  emit("update:model-value", (event.target as HTMLInputElement).value);
-  emit("clear-custom-tip");
-};
 </script>
 
 <template>
   <input
-    @change="updateValue"
+    v-model="modelValue"
+    @change="$emit('clear-custom-tip')"
     type="radio"
     :id="`t-${tip}`"
     name="tip"

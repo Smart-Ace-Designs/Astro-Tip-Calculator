@@ -4,7 +4,7 @@ import { computed, ref } from "vue";
 import StandardTip from "./StandardTip.vue";
 import CustomTip from "./CustomTip.vue";
 
-const standardTip = ref<string>("");
+const standardTip = ref<string>("15");
 const customTip = ref<string>("");
 const standardTipsTypes = ["5", "10", "15", "25", "50"];
 

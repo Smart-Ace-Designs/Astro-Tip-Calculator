@@ -1,29 +1,10 @@
 <script setup lang="ts">
-import { ref, watch } from "vue";
-
-const props = defineProps<{
-  modelValue: string;
-}>();
-
-const emit = defineEmits(["update:model-value"]);
-const inputValue = ref(props.modelValue);
-
-watch(
-  () => props.modelValue,
-  (newValue) => {
-    inputValue.value = newValue;
-  },
-);
-
-const updateValue = (event: Event) => {
-  emit("update:model-value", (event.target as HTMLInputElement).value);
-};
+const modelValue = defineModel<string>();
 </script>
 
 <template>
   <input
-    :value="inputValue"
-    @input="updateValue"
+    v-model="modelValue"
     type="text"
     placeholder="Custom"
     id="custom"
