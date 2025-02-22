@@ -1,15 +1,12 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 
-// Images
 import dollar from "../assets/icon-dollar.svg?url";
 import person from "../assets/icon-person.svg?url";
 
-// Components
 import StandardTip from "./StandardTip.vue";
 import CustomTip from "./CustomTip.vue";
 
-// Data
 const standardTipsTypes = ["5", "10", "15", "25", "50"];
 
 const bill = ref<string>("0");
@@ -18,7 +15,6 @@ const activeTip = ref<string>("15");
 const customTip = ref<string>("");
 const partySize = ref<string>("0");
 
-// Computed
 const tip = computed(() => {
   return customTip.value !== "" ? +customTip.value : +standardTip.value;
 });
@@ -42,7 +38,6 @@ const totalPerPerson = computed(() => {
   return (totalBillAmount / partySizeNum).toFixed(2);
 });
 
-// Methods
 const clearCustomTip = () => {
   customTip.value = "";
 };
