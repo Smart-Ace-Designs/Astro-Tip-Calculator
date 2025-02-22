@@ -2,6 +2,7 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 
 import Bill from "@/components/Bill.vue";
+import Result from "@/components/Result.vue";
 
 import Image from "astro/components/Image.astro";
 import logo from "@/assets/logo.svg";
@@ -18,32 +19,8 @@ import logo from "@/assets/logo.svg";
     <div
       class="bg-theme-white flex h-[480px] w-full max-w-[920px] flex-row rounded-3xl shadow-xl"
     >
-      <div class="w-1/2">
-        <Bill client:load />
-      </div>
-      <div
-        class="bg-theme-very-dark-cyan my-8 mr-10 flex w-1/2 flex-col space-y-10 rounded-2xl px-10 pt-12 pb-8"
-      >
-        <div class="flex justify-between">
-          <div>
-            <h2 class="text-theme-light-grayish-cyan">Tip Amount</h2>
-            <p class="text-theme-grayish-cyan text-sm">/ person</p>
-          </div>
-          <p class="text-theme-strong-cyan text-5xl">$0.00</p>
-        </div>
-        <div class="flex justify-between">
-          <div>
-            <h2 class="text-theme-light-grayish-cyan">Total</h2>
-            <p class="text-theme-grayish-cyan text-sm">/ person</p>
-          </div>
-          <p class="text-theme-strong-cyan text-5xl">$0.00</p>
-        </div>
-        <div class="mt-auto"></div>
-        <button
-          class="bg-theme-bath-green text-theme-very-dark-cyan/30 hover:bg-theme-light-grayish-cyan hover:text-theme-very-dark-cyan w-full rounded-md py-2.5 text-xl uppercase"
-          >Reset</button
-        >
-      </div>
+      <Bill client:load class="w-1/2" />
+      <Result client:load class="w-1/2" />
     </div>
   </main>
 </MainLayout>
