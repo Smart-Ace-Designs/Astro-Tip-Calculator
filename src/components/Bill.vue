@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, ref, provide } from "vue";
 
 import dollar from "../assets/icon-dollar.svg?url";
 import person from "../assets/icon-person.svg?url";
@@ -10,6 +10,7 @@ import CustomTip from "./CustomTip.vue";
 const standardTipsTypes = ["5", "10", "15", "25", "50"];
 
 const bill = ref<string>("");
+
 const standardTip = ref<string>("15");
 const activeTip = ref<string>("15");
 const customTip = ref<string>("");

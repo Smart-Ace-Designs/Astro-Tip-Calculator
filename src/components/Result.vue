@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
+
+const tipPerPerson = ref<string>("0.00");
+const totalPerPerson = ref<string>("0.00");
 </script>
 
 <template>
@@ -11,14 +14,14 @@ import { ref } from "vue";
         <h2 class="text-theme-light-grayish-cyan">Tip Amount</h2>
         <p class="text-theme-grayish-cyan text-sm">/ person</p>
       </div>
-      <p class="text-theme-strong-cyan text-5xl">$0.00</p>
+      <p class="text-theme-strong-cyan text-5xl">${{ tipPerPerson }}</p>
     </div>
     <div class="flex justify-between">
       <div>
         <h2 class="text-theme-light-grayish-cyan">Total</h2>
         <p class="text-theme-grayish-cyan text-sm">/ person</p>
       </div>
-      <p class="text-theme-strong-cyan text-5xl">$0.00</p>
+      <p class="text-theme-strong-cyan text-5xl">${{ totalPerPerson }}</p>
     </div>
     <div class="mt-auto"></div>
     <button
