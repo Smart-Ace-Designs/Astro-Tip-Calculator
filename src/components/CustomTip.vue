@@ -1,11 +1,11 @@
 <script setup lang="ts">
-const modelValue = defineModel<string>();
 const emit = defineEmits(["clear-standard-tip"]);
+const model = defineModel<string>();
 </script>
 
 <template>
   <input
-    v-model="modelValue"
+    v-model="model"
     @focus="$emit('clear-standard-tip')"
     type="text"
     placeholder="Custom"

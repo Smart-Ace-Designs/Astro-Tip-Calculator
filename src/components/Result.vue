@@ -1,8 +1,22 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import { useStore } from "@nanostores/vue";
+import { bill, tip, party } from "@/stores/store";
 
-const tipPerPerson = ref<string>("0.00");
-const totalPerPerson = ref<string>("0.00");
+const $bill = useStore(bill);
+const $tip = useStore(tip);
+const $party = useStore(party);
+
+const tipPerPerson = ref("0.00");
+const totalPerPerson = ref("0.00");
+
+const resetBill = () => {
+  tipPerPerson.value = (
+    (+$bill.value * (+$tip.value / 100)) /
+    +$party.value
+  ).toFixed(2);
+  totalPerPerson.value = (+$bill.value / +$party.value).toFixed(2);
+};
 </script>
 
 <template>
@@ -25,6 +39,7 @@ const totalPerPerson = ref<string>("0.00");
     </div>
     <div class="mt-auto"></div>
     <button
+      @click="resetBill"
       class="bg-theme-bath-green text-theme-very-dark-cyan/30 hover:bg-theme-light-grayish-cyan hover:text-theme-very-dark-cyan w-full rounded-md py-2.5 text-xl uppercase"
     >
       Reset

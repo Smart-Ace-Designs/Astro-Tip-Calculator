@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { computed, ref, provide } from "vue";
+import { computed, ref } from "vue";
+import { useStore } from "@nanostores/vue";
+import { bill, party, tip } from "@/stores/store";
 
 import dollar from "../assets/icon-dollar.svg?url";
 import person from "../assets/icon-person.svg?url";
@@ -8,43 +10,42 @@ import StandardTip from "./StandardTip.vue";
 import CustomTip from "./CustomTip.vue";
 
 const standardTipsTypes = ["5", "10", "15", "25", "50"];
-
-const bill = ref<string>("");
-
 const standardTip = ref<string>("15");
 const activeTip = ref<string>("15");
 const customTip = ref<string>("");
-const partySize = ref<string>("");
 
-const tip = computed(() => {
-  return customTip.value !== "" ? +customTip.value : +standardTip.value;
+const $bill = useStore(bill);
+const billValue = computed({
+  get: () => $bill.value,
+  set: (value) => bill.set(value),
 });
 
-const totalBill = computed(() => {
-  return (+bill.value * (tip.value / 100) + +bill.value).toFixed(2);
-});
+// const $tip = useStore(tip);
+// const tipValue = computed({
+//   get: () => $tip.value,
+//   set: (value) => {
+//     if (customTip.value !== "") {
+//       customTip.value = value;
+//     } else {
+//       standardTip.value = value;
+//     }
+//     tip.set(value);
+//   },
+// });
 
-const tipPerPerson = computed(() => {
-  const billAmount = +bill.value;
-  const partySizeNum = +partySize.value;
-  const tipPercent = tip.value / 100;
-
-  return ((billAmount * tipPercent) / partySizeNum).toFixed(2);
-});
-
-const totalPerPerson = computed(() => {
-  const totalBillAmount = +totalBill.value;
-  const partySizeNum = +partySize.value;
-
-  return (totalBillAmount / partySizeNum).toFixed(2);
+const $party = useStore(party);
+const partyValue = computed({
+  get: () => $party.value,
+  set: (value) => party.set(value),
 });
 
 const clearCustomTip = () => {
   customTip.value = "";
 };
 
-const updateActiveTip = (tip: string) => {
-  activeTip.value = tip;
+const updateActiveTip = (tipValue: string) => {
+  activeTip.value = tipValue;
+  tip.set(tipValue);
 };
 
 const clearStandardTip = () => {
@@ -59,7 +60,7 @@ const clearStandardTip = () => {
     <div class="relative mb-6 flex flex-col">
       <label for="bill" class="text-theme-dark-grayish-cyan mb-2">Bill</label>
       <input
-        v-model.lazy="bill"
+        v-model="billValue"
         id="bill"
         type="text"
         name="bill"
@@ -96,7 +97,7 @@ const clearStandardTip = () => {
         >Number of People</label
       >
       <input
-        v-model.lazy="partySize"
+        v-model.lazy="partyValue"
         id="people"
         type="text"
         name="people"
