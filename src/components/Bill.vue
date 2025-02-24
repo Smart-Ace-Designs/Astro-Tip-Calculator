@@ -20,19 +20,6 @@ const billValue = computed({
   set: (value) => bill.set(value),
 });
 
-// const $tip = useStore(tip);
-// const tipValue = computed({
-//   get: () => $tip.value,
-//   set: (value) => {
-//     if (customTip.value !== "") {
-//       customTip.value = value;
-//     } else {
-//       standardTip.value = value;
-//     }
-//     tip.set(value);
-//   },
-// });
-
 const $party = useStore(party);
 const partyValue = computed({
   get: () => $party.value,
@@ -84,10 +71,7 @@ const clearStandardTip = () => {
           @clear-custom-tip="clearCustomTip"
           @update-active-tip="updateActiveTip"
         />
-        <CustomTip
-          v-model.lazy="customTip"
-          @clear-standard-tip="clearStandardTip"
-        />
+        <CustomTip v-model="customTip" @clear-standard-tip="clearStandardTip" />
       </div>
     </div>
 
@@ -97,7 +81,7 @@ const clearStandardTip = () => {
         >Number of People</label
       >
       <input
-        v-model.lazy="partyValue"
+        v-model="partyValue"
         id="people"
         type="text"
         name="people"

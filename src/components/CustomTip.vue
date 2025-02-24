@@ -1,11 +1,19 @@
 <script setup lang="ts">
+import { tip } from "@/stores/store";
+
 const emit = defineEmits(["clear-standard-tip"]);
 const model = defineModel<string>();
+
+const updateTip = (event: Event) => {
+  const value = (event.target as HTMLInputElement).value;
+  tip.set(value);
+};
 </script>
 
 <template>
   <input
     v-model="model"
+    @input="updateTip"
     @focus="$emit('clear-standard-tip')"
     type="text"
     placeholder="Custom"
