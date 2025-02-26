@@ -77,9 +77,7 @@ const clearStandardTip = () => {
 
     <!-- Party Size -->
     <div class="relative mb-4 flex flex-col">
-      <label for="people" class="text-theme-dark-grayish-cyan mb-2"
-        >Number of People</label
-      >
+      <label for="people" class="text-theme-dark-grayish-cyan mb-2">Number of People</label>
       <input
         v-model="partyValue"
         id="people"

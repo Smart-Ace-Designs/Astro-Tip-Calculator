@@ -12,14 +12,8 @@ const totalPerPerson = ref<string>("0.00");
 
 const resetBill = () => {
   if (+$party.value > 0 && +bill.value > 0) {
-    tipPerPerson.value = (
-      (+$bill.value * (+$tip.value / 100)) /
-      +$party.value
-    ).toFixed(2);
-    totalPerPerson.value = (
-      +$bill.value / +$party.value +
-      +tipPerPerson.value
-    ).toFixed(2);
+    tipPerPerson.value = ((+$bill.value * (+$tip.value / 100)) / +$party.value).toFixed(2);
+    totalPerPerson.value = (+$bill.value / +$party.value + +tipPerPerson.value).toFixed(2);
   } else {
     tipPerPerson.value = "0.00";
     totalPerPerson.value = "0.00";
