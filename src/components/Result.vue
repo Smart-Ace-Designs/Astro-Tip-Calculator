@@ -1,23 +1,44 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import { useStore } from "@nanostores/vue";
 import { bill, tip, party } from "@/stores/store";
 
 const $bill = useStore(bill);
-const $tip = useStore(tip);
-const $party = useStore(party);
+const billValue = computed({
+  get: () => $bill.value,
+  set: (value) => bill.set(value),
+});
 
-const tipPerPerson = ref<string>("0.00");
-const totalPerPerson = ref<string>("0.00");
+const $tip = useStore(tip);
+const tipValue = computed({
+  get: () => $tip.value,
+  set: (value) => tip.set(value),
+});
+
+const $party = useStore(party);
+const partyValue = computed({
+  get: () => $party.value,
+  set: (value) => party.set(value),
+});
+
+const tipPerPerson = computed(() => {
+  if (+$party.value > 0 && +bill.value > 0) {
+    return ((+$bill.value * (+$tip.value / 100)) / +$party.value).toFixed(2);
+  }
+  return "0.00";
+});
+
+const totalPerPerson = computed(() => {
+  if (+$party.value > 0 && +bill.value > 0) {
+    return (+$bill.value / +$party.value + +tipPerPerson.value).toFixed(2);
+  }
+  return "0.00";
+});
 
 const resetBill = () => {
-  if (+$party.value > 0 && +bill.value > 0) {
-    tipPerPerson.value = ((+$bill.value * (+$tip.value / 100)) / +$party.value).toFixed(2);
-    totalPerPerson.value = (+$bill.value / +$party.value + +tipPerPerson.value).toFixed(2);
-  } else {
-    tipPerPerson.value = "0.00";
-    totalPerPerson.value = "0.00";
-  }
+  billValue.value = "";
+  tipValue.value = "";
+  partyValue.value = "";
 };
 </script>
 
