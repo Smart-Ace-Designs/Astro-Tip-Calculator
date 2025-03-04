@@ -2,35 +2,30 @@
 import { computed } from "vue";
 import { useStore } from "@nanostores/vue";
 import { bill, tip, party } from "@/stores/store";
+import type { WritableAtom } from "nanostores";
 
-const $bill = useStore(bill);
-const billValue = computed({
-  get: () => $bill.value,
-  set: (value) => bill.set(value),
-});
+function createComputedStore(atom: WritableAtom) {
+  const store = useStore(atom);
+  return computed({
+    get: () => store.value,
+    set: (value) => atom.set(value),
+  });
+}
 
-const $tip = useStore(tip);
-const tipValue = computed({
-  get: () => $tip.value,
-  set: (value) => tip.set(value),
-});
-
-const $party = useStore(party);
-const partyValue = computed({
-  get: () => $party.value,
-  set: (value) => party.set(value),
-});
+const billValue = createComputedStore(bill);
+const tipValue = createComputedStore(tip);
+const partyValue = createComputedStore(party);
 
 const tipPerPerson = computed(() => {
-  if (+$party.value > 0 && +bill.value > 0) {
-    return ((+$bill.value * (+$tip.value / 100)) / +$party.value).toFixed(2);
+  if (+partyValue.value > 0 && +billValue.value > 0) {
+    return ((+billValue.value * (+tipValue.value / 100)) / +partyValue.value).toFixed(2);
   }
   return "0.00";
 });
 
 const totalPerPerson = computed(() => {
-  if (+$party.value > 0 && +bill.value > 0) {
-    return (+$bill.value / +$party.value + +tipPerPerson.value).toFixed(2);
+  if (+partyValue.value > 0 && +billValue.value > 0) {
+    return (+billValue.value / +partyValue.value + +tipPerPerson.value).toFixed(2);
   }
   return "0.00";
 });
