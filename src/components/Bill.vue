@@ -30,6 +30,13 @@ const clearStandardTip = () => {
   activeTip.value = "";
   standardTip.value = "";
 };
+
+const testCustomTip = () => {
+  if (customTip.value === "") {
+    activeTip.value = "15";
+    standardTip.value = "15";
+  }
+};
 </script>
 
 <template>
@@ -62,7 +69,11 @@ const clearStandardTip = () => {
           @clear-custom-tip="clearCustomTip"
           @update-active-tip="updateActiveTip"
         />
-        <CustomTip v-model="customTip" @clear-standard-tip="clearStandardTip" />
+        <CustomTip
+          v-model="customTip"
+          @clear-standard-tip="clearStandardTip"
+          @test-custom-tip="testCustomTip"
+        />
       </div>
     </div>
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { tip } from "@/stores/store";
 
-const emit = defineEmits(["clear-standard-tip"]);
+const emit = defineEmits(["clear-standard-tip", "test-custom-tip"]);
 const model = defineModel<string>();
 
 const updateTip = (event: Event) => {
@@ -15,6 +15,7 @@ const updateTip = (event: Event) => {
     v-model="model"
     @input="updateTip"
     @focus="$emit('clear-standard-tip')"
+    @blur="$emit('test-custom-tip')"
     type="text"
     placeholder="Custom"
     id="custom"
