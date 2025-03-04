@@ -1,20 +1,11 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { useStore } from "@nanostores/vue";
 import { bill, tip, party } from "@/stores/store";
-import type { WritableAtom } from "nanostores";
+import { useComputedStore } from "@/composables/useComputedStore";
 
-function createComputedStore(atom: WritableAtom) {
-  const store = useStore(atom);
-  return computed({
-    get: () => store.value,
-    set: (value) => atom.set(value),
-  });
-}
-
-const billValue = createComputedStore(bill);
-const tipValue = createComputedStore(tip);
-const partyValue = createComputedStore(party);
+const billValue = useComputedStore(bill);
+const tipValue = useComputedStore(tip);
+const partyValue = useComputedStore(party);
 
 const tipPerPerson = computed(() => {
   if (+partyValue.value > 0 && +billValue.value > 0) {

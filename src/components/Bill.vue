@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
-import { useStore } from "@nanostores/vue";
+import { ref } from "vue";
 import { bill, party, tip } from "@/stores/store";
+import { useComputedStore } from "@/composables/useComputedStore";
 
 import dollar from "../assets/icon-dollar.svg?url";
 import person from "../assets/icon-person.svg?url";
@@ -14,17 +14,8 @@ const standardTip = ref<string>("15");
 const activeTip = ref<string>("15");
 const customTip = ref<string>("");
 
-const $bill = useStore(bill);
-const billValue = computed({
-  get: () => $bill.value,
-  set: (value) => bill.set(value),
-});
-
-const $party = useStore(party);
-const partyValue = computed({
-  get: () => $party.value,
-  set: (value) => party.set(value),
-});
+const billValue = useComputedStore(bill);
+const partyValue = useComputedStore(party);
 
 const clearCustomTip = () => {
   customTip.value = "";
@@ -43,7 +34,7 @@ const clearStandardTip = () => {
 
 <template>
   <form class="flex h-full flex-col justify-between p-12">
-    <!-- Bill Cost -->
+    <!-- Bill Amount -->
     <div class="relative mb-6 flex flex-col">
       <label for="bill" class="text-theme-dark-grayish-cyan mb-2">Bill</label>
       <input
