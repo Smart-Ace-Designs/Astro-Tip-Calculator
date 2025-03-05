@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { bill, party, tip } from "@/stores/store";
+import { bill, party, activeTip, customTip, standardTip, tip } from "@/stores/store";
 import { useComputedStore } from "@/composables/useComputedStore";
 
 import dollar from "../assets/icon-dollar.svg?url";
@@ -10,31 +10,31 @@ import StandardTip from "./StandardTip.vue";
 import CustomTip from "./CustomTip.vue";
 
 const standardTipsTypes = ["5", "10", "15", "25", "50"];
-const standardTip = ref<string>("15");
-const activeTip = ref<string>("15");
-const customTip = ref<string>("");
 
 const billValue = useComputedStore(bill);
 const partyValue = useComputedStore(party);
+const activeTipValue = useComputedStore(activeTip);
+const customTipValue = useComputedStore(customTip);
+const standardTipValue = useComputedStore(standardTip);
 
 const clearCustomTip = () => {
-  customTip.value = "";
+  customTipValue.value = "";
 };
 
 const updateActiveTip = (tipValue: string) => {
-  activeTip.value = tipValue;
+  activeTipValue.value = tipValue;
   tip.set(tipValue);
 };
 
 const clearStandardTip = () => {
-  activeTip.value = "";
-  standardTip.value = "";
+  activeTipValue.value = "";
+  standardTipValue.value = "";
 };
 
 const testCustomTip = () => {
-  if (customTip.value === "") {
-    activeTip.value = "15";
-    standardTip.value = "15";
+  if (customTipValue.value === "") {
+    activeTipValue.value = "15";
+    standardTipValue.value = "15";
   }
 };
 </script>
@@ -64,13 +64,13 @@ const testCustomTip = () => {
           v-for="type in standardTipsTypes"
           :key="type"
           :tip="type"
-          :is-active="activeTip === type"
-          v-model="standardTip"
+          :is-active="activeTipValue === type"
+          v-model="standardTipValue"
           @clear-custom-tip="clearCustomTip"
           @update-active-tip="updateActiveTip"
         />
         <CustomTip
-          v-model="customTip"
+          v-model="customTipValue"
           @clear-standard-tip="clearStandardTip"
           @test-custom-tip="testCustomTip"
         />

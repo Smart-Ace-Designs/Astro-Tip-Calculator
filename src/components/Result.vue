@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { bill, tip, party } from "@/stores/store";
+import { bill, party, activeTip, customTip, standardTip, tip } from "@/stores/store";
 import { useComputedStore } from "@/composables/useComputedStore";
 
 const billValue = useComputedStore(bill);
-const tipValue = useComputedStore(tip);
 const partyValue = useComputedStore(party);
+const tipValue = useComputedStore(tip);
+const activeTipValue = useComputedStore(activeTip);
+const customTipValue = useComputedStore(customTip);
+const standardTipValue = useComputedStore(standardTip);
 
 const tipPerPerson = computed(() => {
   if (+partyValue.value > 0 && +billValue.value > 0) {
@@ -25,6 +28,9 @@ const resetBill = () => {
   billValue.value = "";
   tipValue.value = "15";
   partyValue.value = "";
+  standardTipValue.value = 15;
+  customTipValue.value = "";
+  activeTipValue.value = "15";
 };
 </script>
 
