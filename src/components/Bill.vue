@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { bill, party, activeTip, customTip, standardTip, tip } from "@/stores/store";
+import { bill, party, customTip, standardTip, tip } from "@/stores/store";
 import { useComputedStore } from "@/composables/useComputedStore";
 
 import dollar from "../assets/icon-dollar.svg?url";
@@ -13,7 +12,6 @@ const standardTipsTypes = ["5", "10", "15", "25", "50"];
 
 const billValue = useComputedStore(bill);
 const partyValue = useComputedStore(party);
-const activeTipValue = useComputedStore(activeTip);
 const customTipValue = useComputedStore(customTip);
 const standardTipValue = useComputedStore(standardTip);
 
@@ -21,20 +19,19 @@ const clearCustomTip = () => {
   customTipValue.value = "";
 };
 
-const updateActiveTip = (tipValue: string) => {
-  activeTipValue.value = tipValue;
+const updateTip = (tipValue: string) => {
+  standardTipValue.value = tipValue;
   tip.set(tipValue);
 };
 
 const clearStandardTip = () => {
-  activeTipValue.value = "";
   standardTipValue.value = "";
 };
 
 const testCustomTip = () => {
   if (customTipValue.value === "") {
-    activeTipValue.value = "15";
     standardTipValue.value = "15";
+    tip.set("15");
   }
 };
 </script>
@@ -64,10 +61,10 @@ const testCustomTip = () => {
           v-for="type in standardTipsTypes"
           :key="type"
           :tip="type"
-          :is-active="activeTipValue === type"
+          :is-active="standardTipValue === type"
           v-model="standardTipValue"
           @clear-custom-tip="clearCustomTip"
-          @update-active-tip="updateActiveTip"
+          @update-tip="updateTip"
         />
         <CustomTip
           v-model="customTipValue"

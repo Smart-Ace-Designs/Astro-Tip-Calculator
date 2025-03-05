@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const emit = defineEmits(["clear-custom-tip", "update-active-tip"]);
+const emit = defineEmits(["clear-custom-tip", "update-tip"]);
 const model = defineModel<string>();
 const props = defineProps<{
   tip: string;
@@ -8,7 +8,7 @@ const props = defineProps<{
 
 const handleClick = () => {
   emit("clear-custom-tip");
-  emit("update-active-tip", props.tip);
+  emit("update-tip", props.tip);
 };
 </script>
 
