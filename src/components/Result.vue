@@ -23,7 +23,7 @@ const totalPerPerson = computed(() => {
 
 const resetBill = () => {
   billValue.value = "";
-  tipValue.value = "";
+  tipValue.value = "15";
   partyValue.value = "";
 };
 </script>
