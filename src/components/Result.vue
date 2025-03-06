@@ -29,9 +29,9 @@ const billCompleted = computed(() => {
 
 const resetBill = () => {
   billValue.value = "";
-  tipValue.value = "15";
+  tipValue.value = "";
   partyValue.value = "";
-  standardTipValue.value = "15";
+  standardTipValue.value = "";
   customTipValue.value = "";
 };
 </script>

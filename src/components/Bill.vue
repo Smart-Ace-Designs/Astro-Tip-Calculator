@@ -30,8 +30,8 @@ const clearStandardTip = () => {
 
 const testCustomTip = () => {
   if (customTipValue.value === "") {
-    standardTipValue.value = "15";
-    tip.set("15");
+    standardTipValue.value = "";
+    tip.set("");
   }
 };
 </script>
