@@ -57,10 +57,11 @@ const resetBill = () => {
     <div class="mt-auto"></div>
     <button
       @click="resetBill"
+      :disabled="billCompleted ? false : true"
       class="w-full rounded-md py-2.5 text-xl uppercase"
       :class="[
         billCompleted
-          ? 'hover:bg-theme-light-grayish-cyan hover:text-theme-very-dark-cyan bg-theme-strong-cyan text-theme-very-dark-cyan'
+          ? 'hover:bg-theme-light-grayish-cyan hover:text-theme-very-dark-cyan bg-theme-strong-cyan text-theme-very-dark-cyan hover:cursor-pointer'
           : 'bg-theme-bath-green text-theme-very-dark-cyan/30',
       ]"
     >
