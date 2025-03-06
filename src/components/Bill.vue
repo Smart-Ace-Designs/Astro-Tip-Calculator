@@ -99,6 +99,7 @@ const updateTip = (tipValue: string): void => {
         type="text"
         name="people"
         class="bg-theme-very-light-grayish-cyan placeholder:text-theme-dark-grayish-cyan/50 focus:outline-theme-strong-cyan caret-theme-strong-cyan py-2 pr-4 pl-10 text-right text-[25px] placeholder:mr-1"
+        maxlength="3"
         placeholder="0"
         @input="handlePartySizeChange"
       />
