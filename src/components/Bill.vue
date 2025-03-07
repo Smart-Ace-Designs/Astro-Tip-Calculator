@@ -69,7 +69,7 @@ const updateTip = (tipValue: string): void => {
     <!-- Tip Selection -->
     <div class="mb-6 flex flex-col">
       <p class="text-theme-dark-grayish-cyan mb-4">Select Tip %</p>
-      <div class="grid grid-cols-3 gap-4" id="tip-selector">
+      <div class="grid grid-cols-2 gap-4 lg:grid-cols-3" id="tip-selector">
         <StandardTip
           v-for="type in standardTipsTypes"
           :key="type"
