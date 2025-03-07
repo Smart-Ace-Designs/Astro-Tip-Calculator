@@ -46,7 +46,7 @@ const updateTip = (tipValue: string): void => {
 </script>
 
 <template>
-  <form class="flex h-full flex-col justify-between p-12">
+  <form class="flex h-full flex-col justify-between p-8 lg:p-12">
     <!-- Bill Amount -->
     <div class="relative mb-6 flex flex-col">
       <div class="flex justify-between">
@@ -58,12 +58,12 @@ const updateTip = (tipValue: string): void => {
         id="bill"
         type="text"
         name="bill"
-        class="bg-theme-very-light-grayish-cyan placeholder:text-theme-dark-grayish-cyan/50 focus:outline-theme-strong-cyan caret-theme-strong-cyan py-2 pr-4 pl-10 text-right text-[25px] placeholder:mr-1 hover:cursor-pointer"
+        class="bg-theme-very-light-grayish-cyan placeholder:text-theme-dark-grayish-cyan/50 focus:outline-theme-strong-cyan caret-theme-strong-cyan py-1 pr-4 pl-10 text-right text-[25px] placeholder:mr-1 hover:cursor-pointer lg:py-2"
         maxlength="6"
         placeholder="0"
         @input="handleBillSizeChange"
       />
-      <img :src="dollar" alt="Dolar sign" class="absolute top-12.5 left-4" />
+      <img :src="dollar" alt="Dolar sign" class="absolute top-12 left-4 lg:top-12.5" />
     </div>
 
     <!-- Tip Selection -->
@@ -98,12 +98,12 @@ const updateTip = (tipValue: string): void => {
         id="people"
         type="text"
         name="people"
-        class="bg-theme-very-light-grayish-cyan placeholder:text-theme-dark-grayish-cyan/50 focus:outline-theme-strong-cyan caret-theme-strong-cyan py-2 pr-4 pl-10 text-right text-[25px] placeholder:mr-1 hover:cursor-pointer"
+        class="bg-theme-very-light-grayish-cyan placeholder:text-theme-dark-grayish-cyan/50 focus:outline-theme-strong-cyan caret-theme-strong-cyan py-1 pr-4 pl-10 text-right text-[25px] placeholder:mr-1 hover:cursor-pointer lg:py-2"
         maxlength="3"
         placeholder="0"
         @input="handlePartySizeChange"
       />
-      <img :src="person" alt="Dinner party" class="absolute top-12.5 left-4" />
+      <img :src="person" alt="Dinner party" class="absolute top-12 left-4 lg:top-12.5" />
     </div>
   </form>
 </template>
