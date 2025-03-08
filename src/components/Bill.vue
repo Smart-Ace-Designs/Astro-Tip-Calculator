@@ -48,7 +48,7 @@ const updateTip = (tipValue: string): void => {
 <template>
   <form class="flex h-full flex-col justify-between p-8 lg:p-12">
     <!-- Bill Amount -->
-    <div class="relative mb-6 flex flex-col">
+    <div class="relative mb-8 flex flex-col lg:mb-6">
       <div class="flex justify-between">
         <label for="bill" class="text-theme-dark-grayish-cyan mb-2">Bill</label>
         <p v-if="invalidBillSize" class="mb-2 text-orange-400">Invalid input</p>
@@ -58,7 +58,7 @@ const updateTip = (tipValue: string): void => {
         id="bill"
         type="text"
         name="bill"
-        class="bg-theme-very-light-grayish-cyan placeholder:text-theme-dark-grayish-cyan/50 focus:outline-theme-strong-cyan caret-theme-strong-cyan py-1 pr-4 pl-10 text-right text-[25px] placeholder:mr-1 hover:cursor-pointer lg:py-2"
+        class="bg-theme-very-light-grayish-cyan placeholder:text-theme-dark-grayish-cyan/50 focus:outline-theme-strong-cyan caret-theme-strong-cyan rounded-sm py-1 pr-4 pl-10 text-right text-[25px] placeholder:mr-1 hover:cursor-pointer lg:py-2"
         maxlength="6"
         placeholder="0"
         @input="handleBillSizeChange"
@@ -67,7 +67,7 @@ const updateTip = (tipValue: string): void => {
     </div>
 
     <!-- Tip Selection -->
-    <div class="mb-6 flex flex-col">
+    <div class="mb-8 flex flex-col lg:mb-6">
       <p class="text-theme-dark-grayish-cyan mb-4">Select Tip %</p>
       <div class="grid grid-cols-2 gap-4 lg:grid-cols-3" id="tip-selector">
         <StandardTip
@@ -98,7 +98,7 @@ const updateTip = (tipValue: string): void => {
         id="people"
         type="text"
         name="people"
-        class="bg-theme-very-light-grayish-cyan placeholder:text-theme-dark-grayish-cyan/50 focus:outline-theme-strong-cyan caret-theme-strong-cyan py-1 pr-4 pl-10 text-right text-[25px] placeholder:mr-1 hover:cursor-pointer lg:py-2"
+        class="bg-theme-very-light-grayish-cyan placeholder:text-theme-dark-grayish-cyan/50 focus:outline-theme-strong-cyan caret-theme-strong-cyan rounded-sm py-1 pr-4 pl-10 text-right text-[25px] placeholder:mr-1 hover:cursor-pointer lg:py-2"
         maxlength="3"
         placeholder="0"
         @input="handlePartySizeChange"

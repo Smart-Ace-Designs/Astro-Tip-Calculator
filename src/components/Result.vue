@@ -38,7 +38,7 @@ const resetBill = () => {
 
 <template>
   <div
-    class="bg-theme-very-dark-cyan my-8 mr-10 flex flex-col space-y-10 rounded-2xl px-10 pt-12 pb-8"
+    class="bg-theme-very-dark-cyan mx-6 flex flex-col space-y-10 rounded-2xl px-10 pt-12 pb-8 lg:my-8 lg:mr-10"
   >
     <div class="flex justify-between">
       <div>
