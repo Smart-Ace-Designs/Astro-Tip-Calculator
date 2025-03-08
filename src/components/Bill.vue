@@ -63,7 +63,7 @@ const updateTip = (tipValue: string): void => {
         placeholder="0"
         @input="handleBillSizeChange"
       />
-      <img :src="dollar" alt="Dolar sign" class="absolute top-12 left-4 lg:top-12.5" />
+      <img :src="dollar" alt="Dolar sign" class="absolute top-12 left-4" />
     </div>
 
     <!-- Tip Selection -->
@@ -103,7 +103,7 @@ const updateTip = (tipValue: string): void => {
         placeholder="0"
         @input="handlePartySizeChange"
       />
-      <img :src="person" alt="Dinner party" class="absolute top-12 left-4 lg:top-12.5" />
+      <img :src="person" alt="Dinner party" class="absolute top-12 left-4" />
     </div>
   </form>
 </template>
