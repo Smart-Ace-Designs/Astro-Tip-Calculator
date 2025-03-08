@@ -46,7 +46,7 @@ const updateTip = (tipValue: string): void => {
 </script>
 
 <template>
-  <form class="flex h-full flex-col justify-between p-8 lg:p-12">
+  <form class="flex h-full flex-col justify-between px-8 pt-8 pb-4 lg:p-12">
     <!-- Bill Amount -->
     <div class="relative mb-8 flex flex-col lg:mb-6">
       <div class="flex justify-between">
@@ -58,7 +58,7 @@ const updateTip = (tipValue: string): void => {
         id="bill"
         type="text"
         name="bill"
-        class="bg-theme-very-light-grayish-cyan placeholder:text-theme-dark-grayish-cyan/50 focus:outline-theme-strong-cyan caret-theme-strong-cyan rounded-sm py-1 pr-4 pl-10 text-right text-[25px] placeholder:mr-1 hover:cursor-pointer lg:py-2"
+        class="bg-theme-very-light-grayish-cyan placeholder:text-theme-dark-grayish-cyan/50 focus:outline-theme-strong-cyan caret-theme-strong-cyan rounded-md py-1 pr-4 pl-10 text-right text-[25px] placeholder:mr-1 hover:cursor-pointer lg:py-2"
         maxlength="6"
         placeholder="0"
         @input="handleBillSizeChange"
@@ -98,7 +98,7 @@ const updateTip = (tipValue: string): void => {
         id="people"
         type="text"
         name="people"
-        class="bg-theme-very-light-grayish-cyan placeholder:text-theme-dark-grayish-cyan/50 focus:outline-theme-strong-cyan caret-theme-strong-cyan rounded-sm py-1 pr-4 pl-10 text-right text-[25px] placeholder:mr-1 hover:cursor-pointer lg:py-2"
+        class="bg-theme-very-light-grayish-cyan placeholder:text-theme-dark-grayish-cyan/50 focus:outline-theme-strong-cyan caret-theme-strong-cyan rounded-md py-1 pr-4 pl-10 text-right text-[25px] placeholder:mr-1 hover:cursor-pointer lg:py-2"
         maxlength="3"
         placeholder="0"
         @input="handlePartySizeChange"

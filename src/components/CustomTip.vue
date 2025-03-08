@@ -29,7 +29,7 @@ const updateTip = (event: Event): void => {
     placeholder="Custom"
     id="custom"
     maxlength="3"
-    class="bg-theme-very-light-grayish-cyan text-theme-very-dark-cyan placeholder:text-theme-dark-grayish-cyan focus:bg-theme-very-light-grayish-cyan focus:outline-theme-strong-cyan caret-theme-strong-cyan rounded p-2 text-center text-2xl hover:cursor-pointer focus:text-right focus:placeholder:opacity-0"
+    class="bg-theme-very-light-grayish-cyan text-theme-very-dark-cyan placeholder:text-theme-dark-grayish-cyan focus:bg-theme-very-light-grayish-cyan focus:outline-theme-strong-cyan caret-theme-strong-cyan rounded-md p-2 text-center text-2xl hover:cursor-pointer focus:text-right focus:placeholder:opacity-0"
     :class="{ '!text-red-500': invalidCustomTip }"
   />
 </template>
