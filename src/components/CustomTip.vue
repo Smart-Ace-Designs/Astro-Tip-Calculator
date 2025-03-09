@@ -30,6 +30,6 @@ const updateTip = (event: Event): void => {
     id="custom"
     maxlength="3"
     class="bg-theme-very-light-grayish-cyan text-theme-very-dark-cyan placeholder:text-theme-dark-grayish-cyan focus:bg-theme-very-light-grayish-cyan focus:outline-theme-strong-cyan caret-theme-strong-cyan rounded-md px-2 py-1 text-center text-[25px] hover:cursor-pointer focus:text-right focus:placeholder:opacity-0"
-    :class="{ '!text-red-500': invalidCustomTip }"
+    :class="{ '!text-orange-400': invalidCustomTip }"
   />
 </template>
