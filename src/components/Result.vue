@@ -38,16 +38,16 @@ const resetBill = () => {
 
 <template>
   <div
-    class="bg-theme-very-dark-cyan mx-6 flex flex-col space-y-12 rounded-2xl px-6 py-10 lg:m-8 lg:px-10 lg:pt-12 lg:pb-10"
+    class="bg-theme-very-dark-cyan mx-6 flex flex-col space-y-12 rounded-2xl px-6 py-10 lg:m-8 lg:px-10 lg:pt-14 lg:pb-10"
   >
-    <div class="flex justify-between">
+    <div class="flex items-center justify-between">
       <div>
         <h2 class="text-theme-light-grayish-cyan">Tip Amount</h2>
         <p class="text-theme-grayish-cyan text-sm">/ person</p>
       </div>
       <p class="text-theme-strong-cyan text-[2rem] lg:text-5xl">${{ tipPerPerson }}</p>
     </div>
-    <div class="flex justify-between">
+    <div class="flex items-center justify-between">
       <div>
         <h2 class="text-theme-light-grayish-cyan">Total</h2>
         <p class="text-theme-grayish-cyan text-sm">/ person</p>
@@ -61,7 +61,7 @@ const resetBill = () => {
       class="w-full rounded-md py-2.5 text-xl uppercase"
       :class="[
         billCompleted
-          ? 'hover:bg-theme-light-grayish-cyan hover:text-theme-very-dark-cyan bg-theme-strong-cyan text-theme-very-dark-cyan hover:cursor-pointer'
+          ? 'hover:bg-theme-light-grayish-cyan-hover hover:text-theme-very-dark-cyan bg-theme-strong-cyan text-theme-very-dark-cyan hover:cursor-pointer'
           : 'bg-theme-bath-green text-theme-very-dark-cyan/30',
       ]"
     >
