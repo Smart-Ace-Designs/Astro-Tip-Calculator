@@ -38,21 +38,21 @@ const resetBill = () => {
 
 <template>
   <div
-    class="bg-theme-very-dark-cyan my-8 mr-10 flex flex-col space-y-10 rounded-2xl px-10 pt-12 pb-8"
+    class="bg-theme-very-dark-cyan mx-6 flex flex-col space-y-12 rounded-2xl px-6 py-10 lg:m-8 lg:px-10 lg:pt-12 lg:pb-10"
   >
     <div class="flex justify-between">
       <div>
         <h2 class="text-theme-light-grayish-cyan">Tip Amount</h2>
         <p class="text-theme-grayish-cyan text-sm">/ person</p>
       </div>
-      <p class="text-theme-strong-cyan text-5xl">${{ tipPerPerson }}</p>
+      <p class="text-theme-strong-cyan text-[2rem] lg:text-5xl">${{ tipPerPerson }}</p>
     </div>
     <div class="flex justify-between">
       <div>
         <h2 class="text-theme-light-grayish-cyan">Total</h2>
         <p class="text-theme-grayish-cyan text-sm">/ person</p>
       </div>
-      <p class="text-theme-strong-cyan text-5xl">${{ totalPerPerson }}</p>
+      <p class="text-theme-strong-cyan text-[2rem] lg:text-5xl">${{ totalPerPerson }}</p>
     </div>
     <div class="mt-auto"></div>
     <button

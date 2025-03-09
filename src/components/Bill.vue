@@ -46,9 +46,9 @@ const updateTip = (tipValue: string): void => {
 </script>
 
 <template>
-  <form class="flex h-full flex-col justify-between p-12">
+  <form class="flex h-full flex-col justify-between px-8 pt-8 pb-4 lg:p-10">
     <!-- Bill Amount -->
-    <div class="relative mb-6 flex flex-col">
+    <div class="relative mb-8 flex flex-col lg:mb-6">
       <div class="flex justify-between">
         <label for="bill" class="text-theme-dark-grayish-cyan mb-2">Bill</label>
         <p v-if="invalidBillSize" class="mb-2 text-orange-400">Invalid input</p>
@@ -58,18 +58,19 @@ const updateTip = (tipValue: string): void => {
         id="bill"
         type="text"
         name="bill"
-        class="bg-theme-very-light-grayish-cyan placeholder:text-theme-dark-grayish-cyan/50 focus:outline-theme-strong-cyan caret-theme-strong-cyan py-2 pr-4 pl-10 text-right text-[25px] placeholder:mr-1 hover:cursor-pointer"
+        class="bg-theme-very-light-grayish-cyan placeholder:text-theme-dark-grayish-cyan/50 focus:outline-theme-strong-cyan caret-theme-strong-cyan rounded-md py-1 pr-4 pl-10 text-right text-[25px] placeholder:mr-1 hover:cursor-pointer"
+        :class="{ '!focus:outline-none !outline-orange-400': invalidBillSize }"
         maxlength="6"
         placeholder="0"
         @input="handleBillSizeChange"
       />
-      <img :src="dollar" alt="Dolar sign" class="absolute top-12.5 left-4" />
+      <img :src="dollar" alt="Dolar sign" class="absolute top-12 left-4" />
     </div>
 
     <!-- Tip Selection -->
-    <div class="mb-6 flex flex-col">
+    <div class="mb-8 flex flex-col lg:mb-6">
       <p class="text-theme-dark-grayish-cyan mb-4">Select Tip %</p>
-      <div class="grid grid-cols-3 gap-4" id="tip-selector">
+      <div class="grid grid-cols-2 gap-4 lg:grid-cols-3" id="tip-selector">
         <StandardTip
           v-for="type in standardTipsTypes"
           :key="type"
@@ -98,12 +99,13 @@ const updateTip = (tipValue: string): void => {
         id="people"
         type="text"
         name="people"
-        class="bg-theme-very-light-grayish-cyan placeholder:text-theme-dark-grayish-cyan/50 focus:outline-theme-strong-cyan caret-theme-strong-cyan py-2 pr-4 pl-10 text-right text-[25px] placeholder:mr-1 hover:cursor-pointer"
+        class="bg-theme-very-light-grayish-cyan placeholder:text-theme-dark-grayish-cyan/50 focus:outline-theme-strong-cyan caret-theme-strong-cyan rounded-md py-1 pr-4 pl-10 text-right text-[25px] placeholder:mr-1 hover:cursor-pointer"
+        :class="{ '!focus:outline-none !outline-orange-400': invalidPartySize }"
         maxlength="3"
         placeholder="0"
         @input="handlePartySizeChange"
       />
-      <img :src="person" alt="Dinner party" class="absolute top-12.5 left-4" />
+      <img :src="person" alt="Dinner party" class="absolute top-12 left-4" />
     </div>
   </form>
 </template>
