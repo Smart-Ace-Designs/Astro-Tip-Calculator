@@ -24,12 +24,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Screenshot 2025-03-09 140913](https://github.com/user-attachments/assets/35dea69b-8e62-492e-bc5d-e8909784789a)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [GitHub](https://github.com/Smart-Ace-Designs/Astro-Tip-Calculator)
+- Live Site URL: [Netlify](https://smartacedesigns-astro-tipcalculator.netlify.app/)
 
 ## My process
 
@@ -37,11 +37,12 @@ Users should be able to:
 
 - Astro
 - Astro [Space](https://github.com/Smart-Ace-Designs/Astro-Space) Template
-- Tailwind CSS
+- Tailwind CSS v4
+- Vue
+- Nanostores
 - Flexbox
 - CSS Grid
 - Bun
-- Mobile-first workflow
 
 ## Author
 
