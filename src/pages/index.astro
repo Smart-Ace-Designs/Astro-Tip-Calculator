@@ -12,7 +12,7 @@ import logo from "@/assets/logo.svg";
   <main class="mt-26 flex h-screen flex-col items-center justify-center sm:px-10 lg:mt-0">
     <Image src={logo} alt="Splitter Tip Calculator" class="mb-10 lg:mb-18" loading="eager" />
     <div
-      class="bg-theme-white flex w-full flex-col rounded-3xl shadow-xl lg:h-[480px] lg:max-w-[920px] lg:flex-row"
+      class="bg-theme-white flex w-full flex-col rounded-3xl rounded-b-none pb-8 shadow-xl lg:h-[480px] lg:max-w-[920px] lg:flex-row lg:rounded-b-3xl lg:pb-0"
     >
       <Bill client:load class="lg:w-1/2" />
       <Result client:load class="lg:w-1/2" />
