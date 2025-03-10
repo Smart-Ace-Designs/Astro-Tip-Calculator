@@ -38,7 +38,7 @@ const resetBill = () => {
 
 <template>
   <div
-    class="bg-theme-very-dark-cyan mx-6 flex flex-col space-y-12 rounded-2xl px-6 py-10 lg:m-8 lg:px-10 lg:pt-14 lg:pb-10"
+    class="bg-theme-very-dark-cyan mx-6 flex flex-col space-y-4 rounded-2xl px-6 pt-8 pb-6 lg:m-8 lg:space-y-12 lg:px-10 lg:pt-14 lg:pb-10"
   >
     <div class="flex items-center justify-between">
       <div>
@@ -54,7 +54,7 @@ const resetBill = () => {
       </div>
       <p class="text-theme-strong-cyan text-[2rem] lg:text-5xl">${{ totalPerPerson }}</p>
     </div>
-    <div class="mt-auto"></div>
+    <div class="lg:mt-auto"></div>
     <button
       @click="resetBill"
       :disabled="billCompleted ? false : true"
