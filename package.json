@@ -12,7 +12,7 @@
     "@astrojs/vue": "5.0.13",
     "@nanostores/vue": "^1.0.0",
     "@tailwindcss/vite": "^4.1.7",
-    "astro": "5.7.13",
+    "astro": "5.7.14",
     "nanostores": "^1.0.1",
     "tailwindcss": "^4.1.7",
     "vue": "^3.5.14"
