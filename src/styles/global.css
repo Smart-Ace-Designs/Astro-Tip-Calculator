@@ -1,9 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* Primary */
   --color-theme-strong-cyan: hsl(172, 67%, 45%);
-  /* Neutral */
   --color-theme-very-dark-cyan: hsl(183, 100%, 15%);
   --color-theme-dark-grayish-cyan: hsl(186, 14%, 43%);
   --color-theme-bath-green: hsl(183, 80%, 24%);
@@ -14,22 +12,4 @@
   --color-theme-white: hsl(0, 0%, 100%);
 
   --font-spacemono: "Space Mono", sans-serif;
-}
-
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
-}
-
-@font-face {
-  font-family: "Space Mono";
-  font-style: "normal";
-  font-weight: 700;
-  src: url("/fonts/SpaceMono-Bold.ttf") format("truetype");
-  font-display: swap;
 }

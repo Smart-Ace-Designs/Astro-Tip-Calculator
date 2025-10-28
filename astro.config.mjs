@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
 
@@ -11,4 +11,13 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   integrations: [vue()],
+  experimental: {
+    fonts: [
+      {
+        provider: fontProviders.google(),
+        name: "Space Mono",
+        cssVariable: "--font-spacemono",
+      },
+    ],
+  },
 });
