@@ -50,7 +50,7 @@ const updateTip = (tipValue: string): void => {
     <!-- Bill Amount -->
     <div class="relative mb-8 flex flex-col lg:mb-6">
       <div class="flex justify-between">
-        <label for="bill" class="text-theme-dark-grayish-cyan mb-2">Bill</label>
+        <label for="bill" class="mb-2 text-theme-dark-grayish-cyan">Bill</label>
         <p v-if="invalidBillSize" class="mb-2 text-orange-400">Invalid input</p>
       </div>
       <input
@@ -58,7 +58,7 @@ const updateTip = (tipValue: string): void => {
         id="bill"
         type="text"
         name="bill"
-        class="bg-theme-very-light-grayish-cyan placeholder:text-theme-dark-grayish-cyan/50 focus:outline-theme-strong-cyan caret-theme-strong-cyan rounded-md py-1 pr-4 pl-10 text-right text-[25px] placeholder:mr-1 hover:cursor-pointer"
+        class="rounded-md bg-theme-very-light-grayish-cyan py-1 pr-4 pl-10 text-right text-[25px] caret-theme-strong-cyan placeholder:mr-1 placeholder:text-theme-dark-grayish-cyan/50 hover:cursor-pointer focus:outline-theme-strong-cyan"
         :class="{ '!focus:outline-none !outline-orange-400': invalidBillSize }"
         maxlength="6"
         placeholder="0"
@@ -69,7 +69,7 @@ const updateTip = (tipValue: string): void => {
 
     <!-- Tip Selection -->
     <div class="mb-8 flex flex-col lg:mb-6">
-      <p class="text-theme-dark-grayish-cyan mb-4">Select Tip %</p>
+      <p class="mb-4 text-theme-dark-grayish-cyan">Select Tip %</p>
       <div class="grid grid-cols-2 gap-4 lg:grid-cols-3" id="tip-selector">
         <StandardTip
           v-for="type in standardTipsTypes"
@@ -91,7 +91,7 @@ const updateTip = (tipValue: string): void => {
     <!-- Party Size -->
     <div class="relative mb-4 flex flex-col">
       <div class="flex justify-between">
-        <label for="people" class="text-theme-dark-grayish-cyan mb-2">Number of People</label>
+        <label for="people" class="mb-2 text-theme-dark-grayish-cyan">Number of People</label>
         <p v-if="invalidPartySize" class="mb-2 text-orange-400">Invalid input</p>
       </div>
       <input
@@ -99,7 +99,7 @@ const updateTip = (tipValue: string): void => {
         id="people"
         type="text"
         name="people"
-        class="bg-theme-very-light-grayish-cyan placeholder:text-theme-dark-grayish-cyan/50 focus:outline-theme-strong-cyan caret-theme-strong-cyan rounded-md py-1 pr-4 pl-10 text-right text-[25px] placeholder:mr-1 hover:cursor-pointer"
+        class="rounded-md bg-theme-very-light-grayish-cyan py-1 pr-4 pl-10 text-right text-[25px] caret-theme-strong-cyan placeholder:mr-1 placeholder:text-theme-dark-grayish-cyan/50 hover:cursor-pointer focus:outline-theme-strong-cyan"
         :class="{ '!focus:outline-none !outline-orange-400': invalidPartySize }"
         maxlength="3"
         placeholder="0"

@@ -38,21 +38,21 @@ const resetBill = () => {
 
 <template>
   <div
-    class="bg-theme-very-dark-cyan mx-6 flex flex-col space-y-4 rounded-2xl px-6 pt-8 pb-6 lg:m-8 lg:space-y-12 lg:px-10 lg:pt-14 lg:pb-10"
+    class="mx-6 flex flex-col space-y-4 rounded-2xl bg-theme-very-dark-cyan px-6 pt-8 pb-6 lg:m-8 lg:space-y-12 lg:px-10 lg:pt-14 lg:pb-10"
   >
     <div class="flex items-center justify-between">
       <div>
         <h2 class="text-theme-light-grayish-cyan">Tip Amount</h2>
-        <p class="text-theme-grayish-cyan text-sm">/ person</p>
+        <p class="text-sm text-theme-grayish-cyan">/ person</p>
       </div>
-      <p class="text-theme-strong-cyan text-[2rem] lg:text-5xl">${{ tipPerPerson }}</p>
+      <p class="text-[2rem] text-theme-strong-cyan lg:text-5xl">${{ tipPerPerson }}</p>
     </div>
     <div class="flex items-center justify-between">
       <div>
         <h2 class="text-theme-light-grayish-cyan">Total</h2>
-        <p class="text-theme-grayish-cyan text-sm">/ person</p>
+        <p class="text-sm text-theme-grayish-cyan">/ person</p>
       </div>
-      <p class="text-theme-strong-cyan text-[2rem] lg:text-5xl">${{ totalPerPerson }}</p>
+      <p class="text-[2rem] text-theme-strong-cyan lg:text-5xl">${{ totalPerPerson }}</p>
     </div>
     <div class="lg:mt-auto"></div>
     <button
@@ -61,7 +61,7 @@ const resetBill = () => {
       class="w-full rounded-md py-2.5 text-xl uppercase"
       :class="[
         billCompleted
-          ? 'hover:bg-theme-light-grayish-cyan-hover hover:text-theme-very-dark-cyan bg-theme-strong-cyan text-theme-very-dark-cyan hover:cursor-pointer'
+          ? 'bg-theme-strong-cyan text-theme-very-dark-cyan hover:cursor-pointer hover:bg-theme-light-grayish-cyan-hover hover:text-theme-very-dark-cyan'
           : 'bg-theme-bath-green text-theme-very-dark-cyan/30',
       ]"
     >

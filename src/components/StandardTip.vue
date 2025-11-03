@@ -24,7 +24,7 @@ const handleClick = () => {
   />
   <label
     :for="`t-${tip}`"
-    class="hover:bg-theme-light-grayish-cyan-hover hover:text-theme-very-dark-cyan rounded px-3 py-1 text-center text-[25px] hover:cursor-pointer"
+    class="rounded px-3 py-1 text-center text-[25px] hover:cursor-pointer hover:bg-theme-light-grayish-cyan-hover hover:text-theme-very-dark-cyan"
     :class="[
       isActive
         ? 'bg-theme-strong-cyan text-theme-very-dark-cyan'
