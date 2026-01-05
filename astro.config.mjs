@@ -19,7 +19,6 @@ export default defineConfig({
         cssVariable: "--font-spacemono",
         weights: [400],
         styles: ["normal"],
-        subsets: ["latin"],
       },
     ],
   },
