@@ -11,15 +11,13 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   integrations: [vue()],
-  experimental: {
-    fonts: [
-      {
-        provider: fontProviders.google(),
-        name: "Space Mono",
-        cssVariable: "--font-spacemono",
-        weights: [400],
-        styles: ["normal"],
-      },
-    ],
-  },
+  fonts: [
+    {
+      provider: fontProviders.google(),
+      name: "Space Mono",
+      cssVariable: "--font-spacemono",
+      weights: [400],
+      styles: ["normal"],
+    },
+  ],
 });
